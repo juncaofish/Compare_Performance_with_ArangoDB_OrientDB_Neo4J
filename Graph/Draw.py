@@ -1,6 +1,7 @@
 from Constant import *
 from pylab import *
-
+import pickle
+import pprint
 
 def drawSingleWriteV(neoV,neoVCpu,neoVMem,neoVDisk,oriV,oriVCpu,oriVMem,OriVDisk,araV,araVCpu,araVMem,AraVDsik):
     subplot(2, 2, 1)
@@ -25,6 +26,7 @@ def drawSingleWriteV(neoV,neoVCpu,neoVMem,neoVDisk,oriV,oriVCpu,oriVMem,OriVDisk
     plot(nodeArray, AraVDsik, color='red', label='ArangoDB')
 
     legend(loc='upper left')
+    # savefig("writeV.png")
     show()
 
 def drawSingleWriteE(neoE,neoECpu,neoEMem,neoEDisk,oriE,oriECpu,oriEMem,oriEDisk,araE,araECpu,araEMem,araEDisk):
@@ -52,5 +54,14 @@ def drawSingleWriteE(neoE,neoECpu,neoEMem,neoEDisk,oriE,oriECpu,oriEMem,oriEDisk
     plot(relationArray, araEDisk, color='red', label='ArangoDB')
 
     legend(loc='upper left')
+    # savefig("drawE.png")
     show()
 
+
+def main():
+    f = open('../writeV.pkl', "rb")
+    data = pickle.load(f)
+    pprint.pprint(data)
+
+if __name__ == '__main__':
+    main()

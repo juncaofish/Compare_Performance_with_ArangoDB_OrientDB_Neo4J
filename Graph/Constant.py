@@ -10,7 +10,7 @@ relationArray=range(int(relationNum))[::int(recordPer)]
 
 
 # MySQL
-dataSource='mysql+pymysql://root:123456@127.0.0.1:3306/graph'
+dataSource='mysql+pymysql://root:welcome@127.0.0.1:3306/graph'
 
 
 
